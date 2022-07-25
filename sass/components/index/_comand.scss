@@ -1,0 +1,85 @@
+.comand-section {
+    background-color: $secondary-bg-color;
+}
+
+.comand-section__title {
+    margin-bottom: 50px;
+}
+
+.comand {
+    @include flex ($items: center);
+    gap: 30px;
+}
+
+.comand__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+
+    margin-bottom: 10px;
+}
+
+.comand__text {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.comand__border {
+    background-color: $white-color;
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.comand__desc {
+    color: $secondary-color;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+}
+
+/* COMAND ICON */
+
+.comand__inner-icon {
+    @include flex ($content: center);
+    
+    margin-top: 16px;
+}
+
+.comand__list-icon {
+    @include flex ($content: center);
+
+    gap: 10px;
+}
+
+.comand__link-icon {
+    @include flex ($display:inline-flex, $items: center, $content: center);
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    color: $white-color;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background-color 250ms $cubic, fill 250ms $cubic;
+
+    &:hover,
+    &:focus {
+        background-color: $accent-color;
+        cursor: pointer;
+    }
+}
+
+.comand__icon {
+    fill: #afb1b8;
+
+    .comand__link-icon:hover &,
+    .comand__link-icon:focus & {
+        fill: $white-color;
+    }
+}

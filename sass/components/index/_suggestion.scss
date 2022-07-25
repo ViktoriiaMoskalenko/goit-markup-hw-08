@@ -1,0 +1,31 @@
+.suggest-section__title {
+    margin-bottom: 50px;
+}
+
+.suggest {
+    display: flex;
+    gap: 30px;
+}
+
+.suggest__item {
+    position: relative;
+}
+
+.suggest__overlay {
+    @include flex($items: center, $content: center);
+
+    position: absolute;
+    bottom: 0;
+
+    width: 370px;
+    height: 70px;
+
+    background-color: rgba(47, 48, 58, 0.8);
+}
+
+.suggest__overlay-text {
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    text-transform: uppercase;
+    color: $white-color;
+}

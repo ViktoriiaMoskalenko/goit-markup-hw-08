@@ -1,0 +1,105 @@
+
+.header {
+    border-bottom: 1px solid #ececec;
+}
+
+.header__inner,
+.header__nav {
+    @include flex ($items: center);
+}
+
+@import './logo';
+
+.header__list-nav,
+.header__list-contact {
+    display: flex;
+    gap: 50px;
+}
+
+.header__list-nav {
+    margin-left: 93px;
+}
+
+.header__list-contact {
+    margin-left: auto;
+}
+
+.header__link {
+    display: block;
+
+    color: $main-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+    transition: color 250ms $cubic;
+
+    &:hover,
+    &:focus {
+            color: $accent-color;
+        }
+}
+
+.header__link--line {
+    position: relative;
+
+    &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            display: block;
+            background-color: #188ce8;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: transform 250ms var(--cubic);
+        }
+
+        &:hover::after,
+        &:focus::after{
+            transform: scaleX(1);
+        }
+}
+
+.header__link--index-page,
+.header__link--portfolio-page {
+    color: $accent-color;
+
+    &::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            display: block;
+            background-color: #188ce8;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            transform: scaleX(1);
+        }
+}
+
+.header__link-contact {
+    color: $secondary-color;
+}
+
+/* SVG ICONS HEADER */
+
+.header__svg {
+    @include flex ($display: inline-flex, $items: center)
+}
+
+.header__icon {
+    fill: #757575;
+    margin-right: 10px;
+    transition: fill 250ms $cubic;
+
+    .header__link:hover &,
+        .header__link:focus &{
+            fill: $accent-color;
+        }
+}

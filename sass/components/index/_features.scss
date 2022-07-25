@@ -1,0 +1,30 @@
+.features {
+    display: flex;
+    gap: 30px;
+}
+
+.features__title {
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.features__text {
+    color: $secondary-color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* SVG ICONS SECTION features*/
+
+.features__icon {
+    @include flex($display: flex, $items: center, $content: center);
+    
+    background-color: $secondary-bg-color;
+    width: 270px;
+    height: 120px;
+    margin-bottom: 30px;
+}
