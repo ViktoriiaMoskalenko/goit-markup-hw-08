@@ -3,12 +3,24 @@
 }
 
 .comand-section__title {
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    @media screen and (min-width: 480px) {
+            margin-bottom: 30px;
+        }
 }
 
 .comand {
-    @include flex ($items: center);
-    gap: 30px;
+@media screen and (min-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.comand__img{
+    @media screen and (min-width: 480px) {
+        margin: 0 auto;
+    }
 }
 
 .comand__title {
@@ -20,10 +32,10 @@
 }
 
 .comand__text {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 30px 32px;
+    @media screen and (min-width: 480px) {
+            text-align: center;
+        }
 }
 
 .comand__border {
@@ -32,6 +44,7 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
+
 }
 
 .comand__desc {
@@ -44,7 +57,7 @@
 /* COMAND ICON */
 
 .comand__inner-icon {
-    @include flex ($content: center);
+    @include flex ($display:inline-flex ,$content: center);
     
     margin-top: 16px;
 }
@@ -56,7 +69,7 @@
 }
 
 .comand__link-icon {
-    @include flex ($display:inline-flex, $items: center, $content: center);
+    @include flex ($items: center, $content: center);
 
     list-style: none;
     margin: 0;

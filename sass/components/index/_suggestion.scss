@@ -1,3 +1,9 @@
+.suggest-section{
+    @media screen and (max-width: 1199px) {
+        display: none;
+    }
+}
+
 .suggest-section__title {
     margin-bottom: 50px;
 }

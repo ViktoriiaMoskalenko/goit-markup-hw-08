@@ -1,6 +1,9 @@
 .features {
+@media screen and (min-width:480px) {
     display: flex;
+    flex-direction: column;
     gap: 30px;
+}
 }
 
 .features__title {
@@ -9,6 +12,10 @@
     text-transform: uppercase;
 
     margin-bottom: 10px;
+
+    @media screen and (min-width: 480px) {
+        text-align: center;
+    }
 }
 
 .features__text {
@@ -24,7 +31,7 @@
     @include flex($display: flex, $items: center, $content: center);
     
     background-color: $secondary-bg-color;
-    width: 270px;
+
     height: 120px;
     margin-bottom: 30px;
 }
