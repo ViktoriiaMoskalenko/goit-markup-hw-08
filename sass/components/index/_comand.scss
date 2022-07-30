@@ -1,98 +1,106 @@
 .comand-section {
-    background-color: $secondary-bg-color;
+  background-color: $secondary-bg-color;
 }
 
 .comand-section__title {
-    // margin-bottom: 50px;
-    @media screen and (min-width: 480px) {
-            margin-bottom: 30px;
-        }
+  margin-bottom: 30px;
+
+@media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+    }
 }
 
 .comand {
-@media screen and (min-width: 480px) {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: 1200px) {
+      flex-direction: row;
+  }
 }
 
-.comand__img{
-    @media screen and (min-width: 480px) {
-        margin: 0 auto;
-    }
+.comand__img {
+  margin: 0 auto;
 }
 
 .comand__title {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.19;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .comand__text {
-    padding: 30px 32px;
-    @media screen and (min-width: 480px) {
-            text-align: center;
-        }
+  padding: 30px 32px;
+  text-align: center;
 }
 
 .comand__border {
-    background-color: $white-color;
+  background-color: $white-color;
 
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-        0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 30px) / 2);
+  }
+  @media screen and (min-width: 1200px) {
+      width: 270px;
+  }
 }
 
 .comand__desc {
-    color: $secondary-color;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.19;
+  color: $secondary-color;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.19;
 }
 
 /* COMAND ICON */
 
 .comand__inner-icon {
-    @include flex ($display:inline-flex ,$content: center);
-    
-    margin-top: 16px;
+  @include flex($display: inline-flex, $content: center);
+
+  margin-top: 16px;
 }
 
 .comand__list-icon {
-    @include flex ($content: center);
+  @include flex($content: center);
 
-    gap: 10px;
+  gap: 10px;
 }
 
 .comand__link-icon {
-    @include flex ($items: center, $content: center);
+  @include flex($items: center, $content: center);
 
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-    color: $white-color;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    transition: background-color 250ms $cubic, fill 250ms $cubic;
+  color: $white-color;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 250ms $cubic, fill 250ms $cubic;
 
-    &:hover,
-    &:focus {
-        background-color: $accent-color;
-        cursor: pointer;
-    }
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    cursor: pointer;
+  }
 }
 
 .comand__icon {
-    fill: #afb1b8;
+  fill: #afb1b8;
 
-    .comand__link-icon:hover &,
-    .comand__link-icon:focus & {
-        fill: $white-color;
-    }
+  .comand__link-icon:hover &,
+  .comand__link-icon:focus & {
+    fill: $white-color;
+  }
 }

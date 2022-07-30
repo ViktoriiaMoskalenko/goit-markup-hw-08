@@ -1,105 +1,280 @@
-
 .header {
-    border-bottom: 1px solid #ececec;
+  position: relative;
+  border-bottom: 1px solid #ececec;
+}
+
+.header__menu {
+  @media screen and (max-width: 767px) {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white-color;
+
+    padding: 48px 40px;
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.header__mobile {
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.header__menu.is-open {
+  display: block;
 }
 
 .header__inner,
 .header__nav {
-    @include flex ($items: center);
+  @media screen and (min-width: 768px) {
+    @include flex($items: center, $content: space-between);
+  }
 }
 
 @import './logo';
 
 .header__list-nav,
 .header__list-contact {
-    display: flex;
-    gap: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .header__list-nav {
-    margin-left: 93px;
+  margin-bottom: 302px;
+
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
+    margin-bottom: 0;
+    gap: 50px;
+  }
+        @media screen and (min-width: 1200px) {
+          margin-right: 305px;
+
+        }
 }
 
 .header__list-contact {
-    margin-left: auto;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+        @media screen and (min-width: 1200px) {
+          flex-direction: row;
+          gap: 30px;
+        }
 }
 
 .header__link {
-    display: block;
+  display: block;
 
-    color: $main-color;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.02em;
-    text-decoration: none;
+  color: $main-color;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: calc(47 / 40);
+  letter-spacing: 0.02em;
+  text-decoration: none;
 
+  transition: color 250ms $cubic;
+
+  @media screen and (min-width: 768px) {
     padding-top: 32px;
     padding-bottom: 32px;
-    transition: color 250ms $cubic;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+  }
 
-    &:hover,
-    &:focus {
-            color: $accent-color;
-        }
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.header__link-contact {
+  font-size: 24px;
+  transition: font-size 250ms $cubic;
+
+  padding: 0;
+  &:hover {
+    font-size: 34px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+
+    &:hover {
+      font-size: 12px;
+    }
+    &--email {
+      padding-top: 21px;
+    }
+
+    &--tel {
+      padding-bottom: 21px;
+    }
+  }
+     @media screen and (min-width: 1200px) {
+       padding-top: 32px;
+       padding-bottom: 32px;
+     }
+}
+.header__item-contact {
+  @media screen and (max-width: 767px) {
+    &:nth-child(2) {
+      order: 1;
+    }
+
+    &:nth-child(1) {
+      order: 2;
+      font-style: normal;
+    }
+  }
+  @media screen and (min-width: 768px) {
+  }
+}
+
+.header__social {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 64px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.header__social-link {
+  text-decoration: none;
+  color: $accent-color;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  letter-spacing: 0.02em;
+}
+
+.header__social-item {
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+  &:last-child {
+    padding-right: 0;
+    border: 0;
+  }
+  &:nth-child(1) {
+    padding-left: 0;
+  }
 }
 
 .header__link--line {
+  @media screen and (min-width: 768px) {
     position: relative;
 
     &::after {
-            position: absolute;
-            content: '';
-            bottom: 0;
-            display: block;
-            background-color: #188ce8;
-            width: 100%;
-            height: 4px;
-            border-radius: 2px;
-            transform: scaleX(0);
-            transition: transform 250ms var(--cubic);
-        }
+      position: absolute;
+      content: '';
+      bottom: 0;
+      display: block;
+      background-color: #188ce8;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      transform: scaleX(0);
+      transition: transform 250ms $cubic;
+    }
 
-        &:hover::after,
-        &:focus::after{
-            transform: scaleX(1);
-        }
+    &:hover::after,
+    &:focus::after {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .header__link--index-page,
 .header__link--portfolio-page {
+  @media screen and (min-width: 768px) {
     color: $accent-color;
 
     &::after {
-            position: absolute;
-            content: '';
-            bottom: 0;
-            display: block;
-            background-color: #188ce8;
-            width: 100%;
-            height: 4px;
-            border-radius: 2px;
-            transform: scaleX(1);
-        }
+      position: absolute;
+      content: '';
+      bottom: 0;
+      display: block;
+      background-color: #188ce8;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      transform: scaleX(1);
+    }
+  }
 }
 
 .header__link-contact {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 /* SVG ICONS HEADER */
 
 .header__svg {
-    @include flex ($display: inline-flex, $items: center)
+  @include flex($display: inline-flex, $items: center);
 }
 
 .header__icon {
-    fill: #757575;
-    margin-right: 10px;
-    transition: fill 250ms $cubic;
+  fill: #757575;
+  margin-right: 10px;
+  transition: fill 250ms $cubic;
 
-    .header__link:hover &,
-        .header__link:focus &{
-            fill: $accent-color;
-        }
+  .header__link:hover &,
+  .header__link:focus & {
+    fill: $accent-color;
+  }
+}
+
+.header__btn {
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  & .header__icon-close {
+    display: none;
+    transition: fill 250ms $cubic;
+  }
+
+  & .header__icon-menu {
+    transition: fill 250ms $cubic;
+  }
+
+  &.is-open .header__icon-close {
+    display: block;
+  }
+  &.is-open .header__icon-menu {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+  &:hover .header__icon-menu {
+    fill: $accent-color;
+  }
+  &:hover .header__icon-close {
+    fill: $accent-color;
+  }
+}
+
+.header__btn-svg {
+  fill: $main-color;
 }
