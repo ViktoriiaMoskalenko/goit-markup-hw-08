@@ -5,9 +5,9 @@
 .comand-section__title {
   margin-bottom: 30px;
 
-@media screen and (min-width: 1200px) {
-        margin-bottom: 50px;
-    }
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
 }
 
 .comand {
@@ -19,7 +19,7 @@
     flex-wrap: wrap;
   }
   @media screen and (min-width: 1200px) {
-      flex-direction: row;
+    flex-direction: row;
   }
 }
 
@@ -52,7 +52,7 @@
     width: calc((100% - 30px) / 2);
   }
   @media screen and (min-width: 1200px) {
-      width: 270px;
+    width: 270px;
   }
 }
 

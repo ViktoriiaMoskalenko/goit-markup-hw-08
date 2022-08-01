@@ -58,10 +58,9 @@
     margin-bottom: 0;
     gap: 50px;
   }
-        @media screen and (min-width: 1200px) {
-          margin-right: 305px;
-
-        }
+  @media screen and (min-width: 1200px) {
+    margin-right: 305px;
+  }
 }
 
 .header__list-contact {
@@ -70,10 +69,10 @@
     flex-direction: column;
     gap: 10px;
   }
-        @media screen and (min-width: 1200px) {
-          flex-direction: row;
-          gap: 30px;
-        }
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+    gap: 30px;
+  }
 }
 
 .header__link {
@@ -125,10 +124,10 @@
       padding-bottom: 21px;
     }
   }
-     @media screen and (min-width: 1200px) {
-       padding-top: 32px;
-       padding-bottom: 32px;
-     }
+  @media screen and (min-width: 1200px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 .header__item-contact {
   @media screen and (max-width: 767px) {
