@@ -114,6 +114,9 @@ body.modal-open {
   border-bottom: 1px solid #ececec;
 }
 
+.header__menu {
+  z-index: 100;
+}
 @media screen and (max-width: 767px) {
   .header__menu {
     display: none;
@@ -312,6 +315,12 @@ body.modal-open {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 64px;
+  gap: 10px;
+}
+@media screen and (min-width: 480px) {
+  .header__social {
+    gap: 0;
+  }
 }
 @media screen and (min-width: 768px) {
   .header__social {
@@ -329,16 +338,22 @@ body.modal-open {
 }
 
 .header__social-item {
-  padding-right: 10px;
-  padding-left: 10px;
-  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  width: calc((100% - 10px) / 2);
 }
-.header__social-item:last-child {
-  padding-right: 0;
-  border: 0;
-}
-.header__social-item:nth-child(1) {
-  padding-left: 0;
+@media screen and (min-width: 480px) {
+  .header__social-item {
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 1px solid rgba(33, 33, 33, 0.2);
+  }
+  .header__social-item:last-child {
+    padding-right: 0;
+    border: 0;
+  }
+  .header__social-item:nth-child(1) {
+    padding-left: 0;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -422,7 +437,7 @@ body.modal-open {
   border: none;
   margin: 0;
   padding: 0;
-  z-index: 1;
+  z-index: 500;
 }
 .header__btn .header__icon-close {
   display: none;
@@ -1195,7 +1210,11 @@ address {
   transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  width: 450px;
+}
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {

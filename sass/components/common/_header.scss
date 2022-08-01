@@ -4,6 +4,8 @@
 }
 
 .header__menu {
+z-index: 100;
+
   @media screen and (max-width: 767px) {
     display: none;
     position: absolute;
@@ -148,6 +150,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 64px;
+  gap: 10px;
+    @media screen and (min-width: 480px) {
+        gap: 0;
+      }
   @media screen and (min-width: 768px) {
     display: none;
   }
@@ -163,16 +169,22 @@
 }
 
 .header__social-item {
-  padding-right: 10px;
-  padding-left: 10px;
-  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  width: calc((100% - 10px) / 2);
 
-  &:last-child {
-    padding-right: 0;
-    border: 0;
-  }
-  &:nth-child(1) {
-    padding-left: 0;
+  @media screen and (min-width:480px) {
+    width: auto;
+    padding-right: 10px;
+      padding-left: 10px;
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    
+      &:last-child {
+        padding-right: 0;
+        border: 0;
+      }
+    
+      &:nth-child(1) {
+        padding-left: 0;
+      }
   }
 }
 
@@ -246,7 +258,7 @@
   border: none;
   margin: 0;
   padding: 0;
-  z-index: 1;
+  z-index: 500;
   & .header__icon-close {
     display: none;
     transition: fill 250ms $cubic;
