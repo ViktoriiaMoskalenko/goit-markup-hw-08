@@ -1,28 +1,36 @@
 .filter {
-    @include flex($content: center);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
 
+  @media screen and (min-width: 768px) {
+    @include flex($content: center);
+    margin-bottom: 30px;
+  }
+  @media screen and (min-width: 1200px) {
     margin-bottom: 50px;
-    gap: 8px;
+  }
 }
 
 .filter__btn {
-    background-color: $secondary-bg-color;
-    color: $main-color;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.63;
-    letter-spacing: 0.03em;
+  background-color: $secondary-bg-color;
+  color: $main-color;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.63;
+  letter-spacing: 0.03em;
 
-    padding: 6px 22px;
+  padding: 6px 22px;
 
-    border: 0;
-    border-radius: 4px;
-    transition: background-color 250ms $cubic, color 250ms $cubic;
+  border: 0;
+  border-radius: 4px;
+  transition: background-color 250ms $cubic, color 250ms $cubic;
 
-    &:hover,
-    &:focus {
-        background-color: $accent-color;
-        color: $white-color;
-    }
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-color;
+  }
 }
