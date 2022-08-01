@@ -4,6 +4,9 @@ body {
   color: $main-color;
   font-weight: 700;
   letter-spacing: 0.03em;
+  &.modal-open {
+    overflow: hidden;
+  }
 }
 
 .container {
@@ -23,7 +26,6 @@ body {
 }
 
 .section {
-
   padding-top: 60px;
   padding-bottom: 60px;
 

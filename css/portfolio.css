@@ -28,6 +28,9 @@ body {
   font-weight: 700;
   letter-spacing: 0.03em;
 }
+body.modal-open {
+  overflow: hidden;
+}
 
 .container {
   padding-left: 15px;
