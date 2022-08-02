@@ -32,6 +32,18 @@
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms $cubic;
+  @media screen and (min-width:340px) {
+      width: 310px;
+    }
+  @media screen and (min-width:370px) {
+      width: 340px;
+    }
+  @media screen and (min-width:400px) {
+      width: 370px;
+    }
+@media screen and (min-width:430px) {
+    width: 400px;
+  }
 
   @media screen and (min-width:480px) {
     width: 450px;

@@ -1211,6 +1211,26 @@ address {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+@media screen and (min-width: 340px) {
+  .modal {
+    width: 310px;
+  }
+}
+@media screen and (min-width: 370px) {
+  .modal {
+    width: 340px;
+  }
+}
+@media screen and (min-width: 400px) {
+  .modal {
+    width: 370px;
+  }
+}
+@media screen and (min-width: 430px) {
+  .modal {
+    width: 400px;
+  }
+}
 @media screen and (min-width: 480px) {
   .modal {
     width: 450px;
