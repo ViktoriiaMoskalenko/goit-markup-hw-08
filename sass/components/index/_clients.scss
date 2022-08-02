@@ -1,17 +1,24 @@
 .clients {
-  @include flex($content: center);
-  flex-wrap: wrap;
-  gap: 30px;
+    @include flex($content: center);
+      flex-wrap: wrap;
+      gap: 30px;
   @media screen and (min-width: 768px) {
     @include flex($content: space-between);
   }
 }
 
+
+
 .clients__link {
   @include flex($display: inline-flex, $items: center, $content: center);
-
-  width: 170px;
-  height: 92px;
+@media screen and (min-width:320px) {
+    width: 130px;
+    height: 92px;
+  }
+@media screen and (min-width:400px) {
+    width: 170px;
+      height: 92px;
+}
   margin: 0;
   border: 1px solid #afb1b8;
   border-radius: 4px;
