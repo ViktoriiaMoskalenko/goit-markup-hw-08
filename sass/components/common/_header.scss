@@ -8,13 +8,20 @@ z-index: 100;
 
   @media screen and (max-width: 767px) {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     background-color: $white-color;
 
-    padding: 48px 40px;
+    padding: 48px 40px;    
+
+    &.is-open {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
   }
   @media screen and (min-width: 768px) {
     display: flex;
@@ -22,21 +29,25 @@ z-index: 100;
 }
 
 .header__mobile {
-  @media screen and (max-width: 767px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+    width: 100%;
 }
 
 .header__menu.is-open {
   display: block;
 }
 
-.header__inner,
-.header__nav {
+.header__inner{
   @media screen and (min-width: 768px) {
     @include flex($items: center, $content: space-between);
+  }
+}
+
+.header__nav {
+  @media screen and (min-width: 768px) {
+    @include flex($items: center);
   }
 }
 
@@ -53,8 +64,7 @@ z-index: 100;
 }
 
 .header__list-nav {
-  margin-bottom: 302px;
-
+    margin-bottom: auto;
   @media screen and (min-width: 768px) {
     margin-right: 88px;
     margin-bottom: 0;
@@ -67,8 +77,8 @@ z-index: 100;
 
 .header__list-contact {
   @media screen and (min-width: 768px) {
+    @include flex($items: center);
     display: flex;
-    flex-direction: column;
     gap: 10px;
   }
   @media screen and (min-width: 1200px) {
@@ -242,14 +252,18 @@ z-index: 100;
 }
 
 .header__icon {
-  fill: #757575;
-  margin-right: 10px;
-  transition: fill 250ms $cubic;
-
-  .header__link:hover &,
-  .header__link:focus & {
-    fill: $accent-color;
-  }
+  display: none;
+@media screen and (min-width:768px) {
+  display: block;
+    fill: #757575;
+      margin-right: 10px;
+      transition: fill 250ms $cubic;
+    
+      .header__link:hover &,
+      .header__link:focus & {
+        fill: $accent-color;
+      }
+}
 }
 
 .header__btn {
