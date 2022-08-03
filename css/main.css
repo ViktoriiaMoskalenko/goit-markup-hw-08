@@ -118,6 +118,7 @@ body.modal-open {
 
 .header__menu {
   z-index: 100;
+  overflow-y: scroll;
 }
 @media screen and (max-width: 767px) {
   .header__menu {
@@ -161,7 +162,6 @@ body.modal-open {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
 }
 
 .header__menu.is-open {
@@ -176,12 +176,15 @@ body.modal-open {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
   }
 }
 
+.header__nav {
+  margin-bottom: auto;
+}
 @media screen and (min-width: 768px) {
   .header__nav {
     display: -webkit-box;
@@ -193,6 +196,13 @@ body.modal-open {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    margin-right: 88px;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__nav {
+    margin-right: 305px;
   }
 }
 
@@ -230,22 +240,15 @@ body.modal-open {
   }
 }
 
-.header__list-nav {
-  margin-bottom: auto;
-}
 @media screen and (min-width: 768px) {
   .header__list-nav {
-    margin-right: 88px;
-    margin-bottom: 0;
     gap: 50px;
   }
 }
-@media screen and (min-width: 1200px) {
-  .header__list-nav {
-    margin-right: 305px;
-  }
-}
 
+.header__list-contact {
+  margin-top: auto;
+}
 @media screen and (min-width: 768px) {
   .header__list-contact {
     display: -webkit-box;
@@ -254,10 +257,13 @@ body.modal-open {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: flex;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     gap: 10px;
   }
 }
@@ -474,6 +480,9 @@ body.modal-open {
   margin: 0;
   padding: 0;
   z-index: 500;
+  position: fixed;
+  top: 10px;
+  right: 15px;
 }
 .header__btn .header__icon-close {
   display: none;
@@ -560,11 +569,16 @@ body.modal-open {
 .hero__title {
   color: #ffffff;
   font-weight: 900;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 1.6153846154;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
+}
+@media screen and (min-width: 480px) {
+  .hero__title {
+    font-size: 26px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .hero__title {

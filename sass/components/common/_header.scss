@@ -5,6 +5,7 @@
 
 .header__menu {
 z-index: 100;
+overflow-y: scroll;
 
   @media screen and (max-width: 767px) {
     display: none;
@@ -32,7 +33,6 @@ z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
 .header__menu.is-open {
@@ -41,14 +41,22 @@ z-index: 100;
 
 .header__inner{
   @media screen and (min-width: 768px) {
-    @include flex($items: center, $content: space-between);
+    @include flex( $content: space-between);
   }
 }
 
 .header__nav {
-  @media screen and (min-width: 768px) {
-    @include flex($items: center);
-  }
+    margin-bottom: auto;
+    
+      @media screen and (min-width: 768px) {
+        @include flex($items: center);
+        margin-right: 88px;
+        margin-bottom: 0;
+      }
+    
+      @media screen and (min-width: 1200px) {
+        margin-right: 305px;
+      }
 }
 
 @import './logo';
@@ -64,21 +72,16 @@ z-index: 100;
 }
 
 .header__list-nav {
-    margin-bottom: auto;
   @media screen and (min-width: 768px) {
-    margin-right: 88px;
-    margin-bottom: 0;
     gap: 50px;
-  }
-  @media screen and (min-width: 1200px) {
-    margin-right: 305px;
   }
 }
 
 .header__list-contact {
+  margin-top: auto;
   @media screen and (min-width: 768px) {
-    @include flex($items: center);
-    display: flex;
+    @include flex();
+    flex-direction: column;
     gap: 10px;
   }
   @media screen and (min-width: 1200px) {
@@ -273,6 +276,10 @@ z-index: 100;
   margin: 0;
   padding: 0;
   z-index: 500;
+
+  position: fixed;
+    top: 10px;
+    right: 15px;
   & .header__icon-close {
     display: none;
     transition: fill 250ms $cubic;
