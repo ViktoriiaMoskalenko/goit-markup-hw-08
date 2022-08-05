@@ -35,9 +35,7 @@ overflow-y: scroll;
     align-items: center;
 }
 
-.header__menu.is-open {
-  display: block;
-}
+
 
 .header__inner{
   @media screen and (min-width: 768px) {

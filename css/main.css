@@ -164,10 +164,6 @@ body.modal-open {
           align-items: center;
 }
 
-.header__menu.is-open {
-  display: block;
-}
-
 @media screen and (min-width: 768px) {
   .header__inner {
     display: -webkit-box;
@@ -555,8 +551,6 @@ body.modal-open {
   .hero {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../img/index/bg-1200-2x.jpg);
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/index/bg-1200-2x.jpg);
-    padding-top: 200px;
-    padding-bottom: 200px;
   }
 }
 @media screen and (min-width: 1200px) {
